@@ -2,9 +2,9 @@ package org.indtexbr.gestaoprocessoindustrial.ports;
 
 import java.util.UUID;
 
-import org.indtexbr.gestaoprocessoindustrial.application.entities.VendaEntity;
+import org.indtexbr.gestaoprocessoindustrial.application.entities.CompraEntity;
 import org.springframework.data.repository.CrudRepository;
 
-public interface CompraRepository extends CrudRepository<VendaEntity, UUID>{
+public interface CompraRepository extends CrudRepository<CompraEntity, UUID>{
 
 }

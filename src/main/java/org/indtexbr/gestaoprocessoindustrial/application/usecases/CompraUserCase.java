@@ -4,49 +4,49 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import org.indtexbr.gestaoprocessoindustrial.application.entities.VendaEntity;
-import org.indtexbr.gestaoprocessoindustrial.ports.VendaPort;
-import org.indtexbr.gestaoprocessoindustrial.ports.VendaRepository;
+import org.indtexbr.gestaoprocessoindustrial.application.entities.CompraEntity;
+import org.indtexbr.gestaoprocessoindustrial.ports.CompraPort;
+import org.indtexbr.gestaoprocessoindustrial.ports.CompraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CompraUserCase implements VendaPort{
+public class CompraUserCase implements CompraPort{
 
 	@Autowired
-	private VendaRepository consultoriaRepository;
+	private CompraRepository compraRepository;
 	
 	@Override
-	public void inserirConsultoria(VendaEntity consultoriaEntity) {
+	public void inserirConsultoria(CompraEntity consultoriaEntity) {
 		
-		consultoriaRepository.save(consultoriaEntity);
+		compraRepository.save(consultoriaEntity);
 	}
 
 	@Override
-	public List<VendaEntity> consultarConsultorias() {
+	public List<CompraEntity> consultarCompras() {
 		
-		List<VendaEntity> listaConsultoria = new ArrayList<>();
-		consultoriaRepository.findAll().forEach(listaConsultoria::add);
+		List<CompraEntity> listaCompra = new ArrayList<>();
+		compraRepository.findAll().forEach(listaCompra::add);
 		
-		return listaConsultoria;
+		return listaCompra;
 	}
 	
 	@Override
-	public VendaEntity consultarConsultoria(UUID idConsultoria) {
+	public CompraEntity consultarCompra(UUID idCompra) {
 	
-		return consultoriaRepository.findById(idConsultoria).orElse(null);
+		return compraRepository.findById(idCompra).orElse(null);
 	}
 
 	@Override
-	public void alterarConsultoria(VendaEntity consultoriaEntity) {
+	public void alterarCompra(CompraEntity compraEntity) {
 		
-		consultoriaRepository.save(consultoriaEntity);
+		compraRepository.save(compraEntity);
 	}
 
 	@Override
-	public void deletarConsultoria(UUID idConsultoria) {
+	public void deletarCompra(UUID idCompra) {
 		
-		consultoriaRepository.deleteById(idConsultoria);
+		compraRepository.deleteById(idCompra);
 	}
 
 }

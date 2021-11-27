@@ -5,40 +5,41 @@ import java.util.UUID;
 
 public class VendaDTO {
 
-	private UUID idConsultoria;
-	private String nomeConsultoria;
-	private String cnpjConsultoria;
-	private LocalDate dataContratacao;
-	private String flagAtiva;
+	private UUID idVenda;
+	private String numeroNotaFiscal;
+	private String nomeProduto;
+	private Long quantidadeProduto;
+	private String valorVenda;
 	
-	public UUID getIdConsultoria() {
-		return idConsultoria;
+	public UUID getIdVenda() {
+		return idVenda;
 	}
-	public void setIdConsultoria(UUID idConsultoria) {
-		this.idConsultoria = idConsultoria;
+	public void setIdVenda(UUID idVenda) {
+		this.idVenda = idVenda;
 	}
-	public String getNomeConsultoria() {
-		return nomeConsultoria;
+	public String getNumeroNotaFiscal() {
+		return numeroNotaFiscal;
 	}
-	public void setNomeConsultoria(String nomeConsultoria) {
-		this.nomeConsultoria = nomeConsultoria;
+	public void setNumeroNotaFiscal(String numeroNotaFiscal) {
+		this.numeroNotaFiscal = numeroNotaFiscal;
 	}
-	public String getCnpjConsultoria() {
-		return cnpjConsultoria;
+	public String getNomeProduto() {
+		return nomeProduto;
 	}
-	public void setCnpjConsultoria(String cnpjConsultoria) {
-		this.cnpjConsultoria = cnpjConsultoria;
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
 	}
-	public LocalDate getDataContratacao() {
-		return dataContratacao;
+	public Long getQuantidadeProduto() {
+		return quantidadeProduto;
 	}
-	public void setDataContratacao(LocalDate dataContratacao) {
-		this.dataContratacao = dataContratacao;
+	public void setQuantidadeProduto(Long quantidadeProduto) {
+		this.quantidadeProduto = quantidadeProduto;
 	}
-	public String getFlagAtiva() {
-		return flagAtiva;
+	public String getValorVenda() {
+		return valorVenda;
 	}
-	public void setFlagAtiva(String flagAtiva) {
-		this.flagAtiva = flagAtiva;
+	public void setValorVenda(String valorVenda) {
+		this.valorVenda = valorVenda;
 	}
+	
 }

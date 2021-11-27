@@ -1,6 +1,5 @@
 package org.indtexbr.gestaoprocessoindustrial.application.entities;
 
-import java.time.LocalDate;
 import java.util.UUID;
 
 import javax.persistence.Entity;
@@ -17,41 +16,41 @@ public class CompraEntity {
 	@GenericGenerator(name = "uuid2", strategy = "uuid2")
 	@Type(type="uuid-char")
 	@GeneratedValue(generator = "uuid2")
-	private UUID idConsultoria;
-	private String nomeConsultoria;
-	private String cnpjConsultoria;
-	private LocalDate dataContratacao;
-	private String flagAtiva;
+	private UUID idCompra;
+	private String numeroNotaFiscal;
+	private String nomeProduto;
+	private Long quantidadeProduto;
+	private String valorCompra;
 	
-	public UUID getIdConsultoria() {
-		return idConsultoria;
+	public UUID getIdCompra() {
+		return idCompra;
 	}
-	public void setIdConsultoria(UUID idConsultoria) {
-		this.idConsultoria = idConsultoria;
+	public void setIdCompra(UUID idCompra) {
+		this.idCompra = idCompra;
 	}
-	public String getNomeConsultoria() {
-		return nomeConsultoria;
+	public String getNumeroNotaFiscal() {
+		return numeroNotaFiscal;
 	}
-	public void setNomeConsultoria(String nomeConsultoria) {
-		this.nomeConsultoria = nomeConsultoria;
+	public void setNumeroNotaFiscal(String numeroNotaFiscal) {
+		this.numeroNotaFiscal = numeroNotaFiscal;
 	}
-	public String getCnpjConsultoria() {
-		return cnpjConsultoria;
+	public String getNomeProduto() {
+		return nomeProduto;
 	}
-	public void setCnpjConsultoria(String cnpjConsultoria) {
-		this.cnpjConsultoria = cnpjConsultoria;
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
 	}
-	public LocalDate getDataContratacao() {
-		return dataContratacao;
+	public Long getQuantidadeProduto() {
+		return quantidadeProduto;
 	}
-	public void setDataContratacao(LocalDate dataContratacao) {
-		this.dataContratacao = dataContratacao;
+	public void setQuantidadeProduto(Long quantidadeProduto) {
+		this.quantidadeProduto = quantidadeProduto;
 	}
-	public String getFlagAtiva() {
-		return flagAtiva;
+	public String getValorCompra() {
+		return valorCompra;
 	}
-	public void setFlagAtiva(String flagAtiva) {
-		this.flagAtiva = flagAtiva;
+	public void setValorCompra(String valorCompra) {
+		this.valorCompra = valorCompra;
 	}
 	
 }

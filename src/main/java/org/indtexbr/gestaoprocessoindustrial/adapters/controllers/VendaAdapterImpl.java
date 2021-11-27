@@ -29,7 +29,7 @@ public class VendaAdapterImpl implements VendaAdapter{
 	public ResponseEntity<List<VendaDTO>> consultarVendas() {
 
 		List<VendaDTO> listaVendaDTO = new ArrayList<VendaDTO>();
-		vendaUseCase.consultarConsultorias().forEach( vendaEntity -> {
+		vendaUseCase.consultarVendas().forEach( vendaEntity -> {
 						VendaDTO vendaDTO = VendaMapper.vendaEntityToVendaDTO(vendaEntity);
 						listaVendaDTO.add(vendaDTO);
 					});
@@ -40,26 +40,26 @@ public class VendaAdapterImpl implements VendaAdapter{
 	@GetMapping("/vendas/{idVenda}")
 	public ResponseEntity<VendaDTO> consultarVenda(@PathVariable UUID idVenda) {
 
-		return ResponseEntity.ok(VendaMapper.vendaEntityToVendaDTO(vendaUseCase.consultarConsultoria(idVenda)));
+		return ResponseEntity.ok(VendaMapper.vendaEntityToVendaDTO(vendaUseCase.consultarVenda(idVenda)));
 	}
 
 	@PostMapping("/vendas")
 	public ResponseEntity<Void> inserirVenda(@RequestBody VendaDTO venda) {
 		
-		vendaUseCase.inserirConsultoria(VendaMapper.vendaDTOToVendaEntity(venda));
+		vendaUseCase.inserirVenda(VendaMapper.vendaDTOToVendaEntity(venda));
 		return ResponseEntity.noContent().build();
 	}
 
 	@PutMapping("/vendas")
 	public ResponseEntity<Void> alterarVenda(@RequestBody VendaDTO venda) {
-		vendaUseCase.alterarConsultoria(VendaMapper.vendaDTOToVendaEntity(venda));
+		vendaUseCase.alterarVenda(VendaMapper.vendaDTOToVendaEntity(venda));
 		return ResponseEntity.noContent().build();
 	}
 
 	@DeleteMapping("/vendas/{idVenda}")
 	public ResponseEntity<Void> deletarVenda(@PathVariable UUID idVenda) {
 
-		vendaUseCase.deletarConsultoria(idVenda);
+		vendaUseCase.deletarVenda(idVenda);
 		return  ResponseEntity.noContent().build();
 	}
 	

@@ -7,9 +7,9 @@ import org.indtexbr.gestaoprocessoindustrial.application.entities.VendaEntity;
 
 public interface VendaPort {
 
-	public void inserirConsultoria(VendaEntity consultoriaEntity);
-	public List<VendaEntity> consultarConsultorias();
-	public VendaEntity consultarConsultoria(UUID idConsultoria);
-	public void alterarConsultoria(VendaEntity consultoriaEntity);
-	public void deletarConsultoria(UUID idConsultoria);
+	public void inserirVenda(VendaEntity vendaEntity);
+	public List<VendaEntity> consultarVendas();
+	public VendaEntity consultarVenda(UUID idVenda);
+	public void alterarVenda(VendaEntity vendaEntity);
+	public void deletarVenda(UUID idVenda);
 }

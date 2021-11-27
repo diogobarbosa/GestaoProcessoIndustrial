@@ -25,7 +25,7 @@ public class CompraAdapterImpl implements CompraAdapter{
 	@Autowired
 	private CompraPort compraUseCase;
 	
-	@GetMapping("/consultorias")
+	@GetMapping("/compras")
 	public ResponseEntity<List<CompraDTO>> consultarCompras() {
 
 		List<CompraDTO> listaCompraDTO = new ArrayList<CompraDTO>();

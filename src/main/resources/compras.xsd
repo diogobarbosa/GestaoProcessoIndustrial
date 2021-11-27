@@ -1,0 +1,31 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+
+    <xs:element name="inserirCompraRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="compra" type="tns:compra"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="inserirCompraResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="status" type="xs:string"/>
+                 <xs:element name="mensagem" type="xs:string"/>              
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="compra">
+        <xs:sequence>
+            <xs:element name="numeroNotaFiscal" type="xs:string"/>
+            <xs:element name="nomeProduto" type="xs:string"/>
+             <xs:element name="quantidadeProduto" type="xs:string"/>         
+            <xs:element name="valorCompra" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+</xs:schema>

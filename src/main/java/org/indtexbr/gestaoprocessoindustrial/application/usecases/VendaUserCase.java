@@ -14,39 +14,39 @@ import org.springframework.stereotype.Component;
 public class VendaUserCase implements VendaPort{
 
 	@Autowired
-	private VendaRepository consultoriaRepository;
+	private VendaRepository vendaRepository;
 	
 	@Override
-	public void inserirConsultoria(VendaEntity consultoriaEntity) {
+	public void inserirVenda(VendaEntity vendaEntity) {
 		
-		consultoriaRepository.save(consultoriaEntity);
+		vendaRepository.save(vendaEntity);
 	}
 
 	@Override
-	public List<VendaEntity> consultarConsultorias() {
+	public List<VendaEntity> consultarVendas() {
 		
-		List<VendaEntity> listaConsultoria = new ArrayList<>();
-		consultoriaRepository.findAll().forEach(listaConsultoria::add);
+		List<VendaEntity> listaVenda = new ArrayList<>();
+		vendaRepository.findAll().forEach(listaVenda::add);
 		
-		return listaConsultoria;
+		return listaVenda;
 	}
 	
 	@Override
-	public VendaEntity consultarConsultoria(UUID idConsultoria) {
+	public VendaEntity consultarVenda(UUID idVenda) {
 	
-		return consultoriaRepository.findById(idConsultoria).orElse(null);
+		return vendaRepository.findById(idVenda).orElse(null);
 	}
 
 	@Override
-	public void alterarConsultoria(VendaEntity consultoriaEntity) {
+	public void alterarVenda(VendaEntity vendaEntity) {
 		
-		consultoriaRepository.save(consultoriaEntity);
+		vendaRepository.save(vendaEntity);
 	}
 
 	@Override
-	public void deletarConsultoria(UUID idConsultoria) {
+	public void deletarVenda(UUID idVenda) {
 		
-		consultoriaRepository.deleteById(idConsultoria);
+		vendaRepository.deleteById(idVenda);
 	}
 
 }
