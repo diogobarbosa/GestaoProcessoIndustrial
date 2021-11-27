@@ -50,8 +50,10 @@ public class VendaAdapterImpl implements VendaAdapter{
 		return ResponseEntity.noContent().build();
 	}
 
-	@PutMapping("/vendas")
-	public ResponseEntity<Void> alterarVenda(@RequestBody VendaDTO venda) {
+	@PutMapping("/vendas/{idVenda}")
+	public ResponseEntity<Void> alterarVenda(@PathVariable UUID idVenda, @RequestBody VendaDTO venda) {
+		
+		venda.setIdVenda(idVenda);
 		vendaUseCase.alterarVenda(VendaMapper.vendaDTOToVendaEntity(venda));
 		return ResponseEntity.noContent().build();
 	}

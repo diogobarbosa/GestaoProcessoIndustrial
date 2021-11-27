@@ -50,8 +50,10 @@ public class CompraAdapterImpl implements CompraAdapter{
 		return ResponseEntity.noContent().build();
 	}
 
-	@PutMapping("/compras")
-	public ResponseEntity<Void> alterarCompra(@RequestBody CompraDTO compra) {
+	@PutMapping("/compras/{idCompra}")
+	public ResponseEntity<Void> alterarCompra(@PathVariable UUID idCompra, @RequestBody CompraDTO compra) {
+		
+		compra.setIdCompra(idCompra);
 		compraUseCase.alterarCompra(CompraMapper.compraDTOToCompraEntity(compra));
 		return ResponseEntity.noContent().build();
 	}

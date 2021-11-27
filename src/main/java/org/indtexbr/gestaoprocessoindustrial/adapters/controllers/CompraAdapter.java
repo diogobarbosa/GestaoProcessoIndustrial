@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.indtexbr.gestaoprocessoindustrial.adapters.dto.CompraDTO;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 
 public interface CompraAdapter{
 
@@ -14,7 +15,7 @@ public interface CompraAdapter{
 
 	public ResponseEntity<CompraDTO> consultarCompra(UUID idCompra);
 	
-	public ResponseEntity<Void> alterarCompra(CompraDTO compra);
+	public ResponseEntity<Void> alterarCompra(@PathVariable UUID idCompra, CompraDTO compra);
 	
 	public ResponseEntity<Void> deletarCompra(UUID idCompra);
 }
